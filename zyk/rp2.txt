@@ -1,0 +1,31 @@
+Research Background:
+Graph databases have been around for a while, serving as a specialized database technology designed to handle graph-structured data more efficiently than traditional relational databases. Their ability to represent complex relationships and traverse them quickly makes them ideal for various applications, from social networks to recommendation systems. Concurrently, Graph Neural Networks (GNNs) have emerged as a powerful deep learning model, particularly adept at handling graph-structured data for tasks like node classification, link prediction, and graph classification. The synergy between graph databases and GNNs presents a compelling avenue for research, aiming to harness the strengths of both domains.
+
+Research Objective:
+The primary goal of this research is to explore and design a graph database architecture optimized explicitly for GNNs. By doing so, we aim to achieve more efficient storage, querying, and processing of graph data, while also providing robust support for GNNs, enhancing computational performance and prediction accuracy. For instance, one objective might be to design a storage mechanism that aligns with the typical access patterns of GNNs during training, such as neighborhood sampling.
+
+Research Methodology:
+
+Building upon existing graph database technologies, we plan to design a novel database architecture. This will involve:
+
+Heterogeneous Storage Backends: Implementing heterogeneous storage backends, like RocksDB and Parquet, to cater to large-scale graph data.
+
+Property Graph Model: Adopting a property graph model where each node and edge can possess multiple attributes.
+
+New Query Language: Crafting a new query language tailored for GNN training and inference.
+
+Integration of GNN Models: Investigating the integration of GNN models with the new database architecture. Techniques like preloading certain graph substructures that a GNN frequently accesses during training might be explored to reduce repeated disk or network I/O.
+
+Leveraging Graph Representation Learning: Utilizing the power of graph representation learning to approximate complex graph queries using latent representations (i.e., embeddings). For instance, the Query2Box method, which solves multi-hop queries of arbitrary length and type, can be employed as an ML operator in our envisioned database to approximate traversals. This method traverses a learned latent space using projections and intersections of hyper-rectangles, offering impressive accuracy results.
+
+Hybrid Query Optimizer: Designing a hybrid query optimizer that considers operators with dual execution strategies: one operating using raw data accesses and one operating as ML inferences directly in learned latent spaces. This optimization process is paramount to bringing the vision of a graph database equipped with inference capabilities to fruition.
+
+Error Estimation: Considering methods for error estimation in ML-powered query plans, granting end-users control over the inferred outcomes. This involves exploring techniques like Conformal Prediction and Venn Predictors, which rely on calibration sets to provide sound uncertainty bounds.
+
+Continuous Training and Inference: Exploring techniques for continuous training and inference to strike a balance between ensuring low query latency and offering predicted query results. This is especially crucial for dynamic knowledge graphs, where newly ingested data might not have been used to train the current models backing the ML operators.
+
+Expected Outcomes:
+We anticipate that the new graph database architecture will significantly boost the training speed and prediction accuracy of GNNs. Additionally, we expect the novel database architecture to outperform traditional graph databases in storing and querying large-scale graph data. For example, by optimizing data storage for GNN access patterns, we might reduce the overall I/O operations during GNN training, leading to faster convergence and better model performance.
+
+Significance of the Research:
+As graph data becomes increasingly prevalent in various applications, efficiently storing and processing this data remains a critical challenge. This research not only offers a fresh solution to this challenge but also bolsters the study and application of GNNs. By bridging the gap between graph databases and GNNs, we pave the way for more efficient and powerful graph-based machine learning applications.
